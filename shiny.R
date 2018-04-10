@@ -59,10 +59,12 @@ runExample("11_timer")      # an automated timer
 library(dplyr)
 library(ggplot2)
 
+
 setwd('/Users/sarahtucker/Documents/GitHub/potpourri/')
 getwd()
 bcl <- read.csv('/Users/sarahtucker/Documents/GitHub/potpourri/bclData.csv') 
 bcl
+
 # Don't forget to set your wd so R can find this file.
 
 ## Read in the data
@@ -355,7 +357,13 @@ ui <- fluidPage( #  Hint: Style rule #8
 # Run the app. Ooh, nice slider. 
 # Now paste this code ^ into your R console, and then paste this into the console (not the app):
 
+<<<<<<< HEAD
 print(ui) #  Hint: Style rule #5
+=======
+
+print(ui) #  Hint: Style rule #5
+
+>>>>>>> c72d0b346f3a8cc56b8ee69540a936819271186b
 
 # By printing the ui here, we can see how ugly HTML would be to type raw. Thanks, Shiny!
 
@@ -399,6 +407,9 @@ mainPanel(
   strong("strong() bolds your text."),
   em("em() creates italicized (i.e, EMphasized) text.")
   
+
+)
+
 # Run the app, see how your commands added and formatted your text.
 
 ## Add an image
@@ -412,10 +423,18 @@ mainPanel(
 # Replace your mainPanel() with:
 mainPanel(
   plotOutput(outputId = "distPlot"), #  We want to output a histogram
+<<<<<<< HEAD
   img(src = "colors.jpg", height = 400, width = 550),
   p(strong(em("Microbes beware")))
 )
   
+=======
+
+  img(src = "geyser.jpg", height = 170, width = 296),
+  p("bison beware")
+)
+
+>>>>>>> c72d0b346f3a8cc56b8ee69540a936819271186b
 ## Check your code against mine:
 
 library(shiny)
