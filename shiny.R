@@ -63,7 +63,6 @@ setwd('/Users/sarahtucker/Documents/GitHub/potpourri/')
 getwd()
 bcl <- read.csv('/Users/sarahtucker/Documents/GitHub/potpourri/bclData.csv') 
 bcl
-#  Briefly explore the data in your R Studio console.
 # Don't forget to set your wd so R can find this file.
 
 ## Read in the data
