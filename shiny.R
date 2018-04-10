@@ -322,6 +322,13 @@ shinyApp(ui = ui, server = server)
 # ^ All of this should be in "app.R".
 # Great job- return to the worksheet.
 
+
+
+
+
+
+
+
 ### PART III ###
 
 data("faithful") #  Built-in eruption dataset
@@ -330,7 +337,7 @@ head(faithful)
 ## Add to the ui (the user interface object)
 # Let's start by making the ui variable fancier. Replace ui <- fluidPage() with:
 
-ui = fluidPage( #  Hint: Style rule #8
+ui <- fluidPage( #  Hint: Style rule #8
   titlePanel("Old Faithful Eruptions"), #  The title of our app goes here
   sidebarLayout( #  Sidebar layout with spaces for inputs and outputs
     sidebarPanel( #  for inputs
@@ -349,7 +356,7 @@ ui = fluidPage( #  Hint: Style rule #8
 # Run the app. Ooh, nice slider. 
 # Now paste this code ^ into your R console, and then paste this into the console (not the app):
 
-print (ui) #  Hint: Style rule #5
+print(ui) #  Hint: Style rule #5
 
 # By printing the ui here, we can see how ugly HTML would be to type raw. Thanks, Shiny!
 
@@ -365,11 +372,16 @@ server <- function(input, output) {
   # 2. the output type we want
   output$distPlot <- renderPlot({
     x <- faithful$waiting
-    bins <-seq(min(x), max(x), length.out = input$bins + 1) # Hint: Style rule #5
-    hist(x, breaks = bins, col = heat.colors(10, alpha = 1), border = "white",
+    bins <- seq(min(x), max(x), length.out = input$bins + 1)
+    # Hint: Style rule #5
+    hist(x, breaks = bins, col = heat.colors(30, alpha = 0.8), border = "white",
          xlab = "Waiting time to next eruption (mins)",
          main = "Histogram of waiting times")
-  })} # Hint: Style rule #6
+  })
+} # Hint: Style rule #6
+
+
+shinyApp(ui = ui, server = server)
 
 # Make your edits, save, and run the app again. Play with your slider. Pretty.
 
@@ -401,8 +413,9 @@ mainPanel(
 # Replace your mainPanel() with:
 mainPanel(
   plotOutput(outputId = "distPlot"), #  We want to output a histogram
-  img(src = "bison.jpg", height = 170, width = 296),
-  p("bison beware")
+  img(src = "colors.jpg", height = 400, width = 550),
+  p(strong(em("Microbes beware")))
+)
   
 ## Check your code against mine:
 
@@ -440,3 +453,5 @@ shinyApp(ui = ui, server = server)
 
 # ^ All of this should be in your "app.R" file.
 # Return to the worksheet.
+
+
