@@ -406,7 +406,6 @@ mainPanel(
   p("A new p() command starts a new paragraph. Supply a style attribute to change the format of the entire paragraph.", style = "font-family: 'times'; font-si16pt"),
   strong("strong() bolds your text."),
   em("em() creates italicized (i.e, EMphasized) text.")
-  
 
 )
 
